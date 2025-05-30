@@ -1,0 +1,362 @@
+/* Base Styles */
+.client-list-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.client-list-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.client-list-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.client-list-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Controls */
+.client-list-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.client-list-search {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.client-list-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.client-list-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.client-list-search-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.client-list-filter {
+  position: relative;
+  min-width: 200px;
+}
+
+.client-list-filter-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+
+.client-list-filter-select {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.client-list-filter-select:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* Client Grid */
+.client-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.client-list-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.client-list-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+/* Client Card */
+.client-list-card {
+  perspective: 1000px;
+  height: 350px;
+}
+
+.client-list-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.client-list-card:hover .client-list-card-inner {
+  transform: rotateY(180deg);
+}
+
+.client-list-card-front,
+.client-list-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.client-list-card-back {
+  transform: rotateY(180deg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Front Card Styles */
+.client-list-card-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  gap: 1rem;
+}
+
+.client-list-card-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.client-list-card-name h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.client-list-card-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.client-list-card-badge.regular {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.client-list-card-badge.premium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.client-list-card-badge.vip {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: white;
+}
+
+.client-list-card-details {
+  padding: 1rem 1.5rem;
+}
+
+.client-list-card-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.client-list-card-icon {
+  margin-right: 0.75rem;
+  color: #64748b;
+  min-width: 20px;
+}
+
+.client-list-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto;
+}
+
+.client-list-card-date {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.client-list-card-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.client-list-card-status.active {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.client-list-card-status.inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Back Card Styles */
+.client-list-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.client-list-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.client-list-card-btn.edit {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.client-list-card-btn.edit:hover {
+  background-color: #bae6fd;
+}
+
+.client-list-card-btn.activate {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.client-list-card-btn.activate:hover {
+  background-color: #bbf7d0;
+}
+
+.client-list-card-btn.deactivate {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.client-list-card-btn.deactivate:hover {
+  background-color: #fecaca;
+}
+
+.client-list-card-btn.delete {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.client-list-card-btn.delete:hover {
+  background-color: #e2e8f0;
+}
+
+.client-list-card-notes h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.client-list-card-notes p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Client Type Styling */
+.client-list-card.vip .client-list-card-avatar {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.client-list-card.premium .client-list-card-avatar {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .client-list-container {
+    padding: 1rem;
+  }
+
+  .client-list-title {
+    font-size: 1.75rem;
+  }
+
+  .client-list-controls {
+    flex-direction: column;
+  }
+
+  .client-list-search,
+  .client-list-filter {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-list-grid {
+    grid-template-columns: 1fr;
+  }
+}

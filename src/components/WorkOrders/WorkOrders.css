@@ -1,0 +1,601 @@
+/* WorkOrders.css */
+
+.workorders-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.workorders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+.workorders-title {
+  color: #2c3e50;
+  font-size: 24px;
+  margin: 0;
+}
+
+.workorders-search {
+  display: flex;
+  align-items: center;
+}
+
+.workorders-searchInput {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 250px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.workorders-searchInput:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.workorders-searchBtn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.workorders-searchBtn:hover {
+  background-color: #2980b9;
+}
+
+.workorders-main {
+  display: grid;
+  grid-template-columns: 300px 1fr 400px;
+  gap: 20px;
+}
+
+.workorders-createPanel,
+.workorders-listPanel,
+.workorders-detailPanel {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.workorders-panelTitle {
+  color: #2c3e50;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+.workorders-formGroup {
+  margin-bottom: 15px;
+}
+
+.workorders-formLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.workorders-formSelect,
+.workorders-formInput,
+.workorders-formTextarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.workorders-formSelect:focus,
+.workorders-formInput:focus,
+.workorders-formTextarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.workorders-formTextarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.workorders-serviceInputContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.workorders-amountInput {
+  width: 80px !important;
+}
+
+.workorders-addServiceBtn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.workorders-addServiceBtn:hover {
+  background-color: #27ae60;
+}
+
+.workorders-serviceTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.workorders-serviceTag {
+  background-color: #e8f4fd;
+  color: #2980b9;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.workorders-removeTagBtn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+}
+
+.workorders-totalAmount {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 15px 0;
+  text-align: right;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.workorders-createBtn {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.workorders-createBtn:hover {
+  background-color: #2980b9;
+}
+
+.workorders-createBtn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.workorders-listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.workorders-viewToggle {
+  background: none;
+  border: 1px solid #3498db;
+  color: #3498db;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.workorders-viewToggle:hover,
+.workorders-viewToggle.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.workorders-cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.workorders-card {
+  background-color: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 6px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.workorders-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.workorders-card.active {
+  border-color: #3498db;
+  background-color: #f0f7fd;
+}
+
+.workorders-cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.workorders-cardClient {
+  margin: 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.workorders-cardDate {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.workorders-cardServices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.workorders-cardServiceTag {
+  background-color: #e8f4fd;
+  color: #2980b9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.workorders-cardAmount {
+  font-weight: 600;
+  color: #27ae60;
+  margin: 10px 0;
+  text-align: right;
+}
+
+.workorders-cardStats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 10px;
+}
+
+.workorders-cardStat i {
+  margin-right: 5px;
+}
+
+.workorders-emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #bdc3c7;
+  text-align: center;
+}
+
+.workorders-emptyIcon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.workorders-detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.workorders-closeDetail {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #95a5a6;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.workorders-closeDetail:hover {
+  color: #e74c3c;
+}
+
+.workorders-orderSummary {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+.workorders-servicesSummary {
+  margin-top: 10px;
+}
+
+.workorders-serviceSummaryItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.workorders-summaryServiceName {
+  color: #34495e;
+}
+
+.workorders-summaryServiceAmount {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.workorders-summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+  font-size: 15px;
+}
+
+.workorders-sectionTitle {
+  font-size: 16px;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.workorders-formRow {
+  display: flex;
+  gap: 15px;
+}
+
+.workorders-formCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.workorders-formCheckbox input {
+  margin-right: 8px;
+}
+
+.workorders-checkboxLabel {
+  font-size: 14px;
+  color: #34495e;
+}
+
+.workorders-addTaskBtn {
+  width: 100%;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+
+.workorders-addTaskBtn:hover {
+  background-color: #27ae60;
+}
+
+.workorders-addTaskBtn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.workorders-taskItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workorders-taskItem {
+  background-color: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.workorders-taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.workorders-taskTitle {
+  margin: 0;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+.workorders-taskCategory {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #e8f4fd;
+  color: #2980b9;
+}
+
+.workorders-taskMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.workorders-taskNotes {
+  font-size: 14px;
+  color: #34495e;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.workorders-taskActions {
+  margin-top: 10px;
+}
+
+.workorders-taskCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.workorders-checkboxCustom {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.workorders-taskCheckbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.workorders-taskCheckbox input:checked + .workorders-checkboxCustom {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.workorders-taskCheckbox input:checked + .workorders-checkboxCustom::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.workorders-taskStatus {
+  font-size: 14px;
+  color: #34495e;
+}
+
+.workorders-historyItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workorders-historyItem {
+  background-color: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.workorders-historyHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.workorders-historyDate {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.workorders-historyType {
+  font-size: 12px;
+  background-color: #f8f9fa;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #34495e;
+}
+
+.workorders-historyDetails {
+  font-size: 14px;
+  color: #34495e;
+  line-height: 1.5;
+}
+
+.workorders-historyDetails p {
+  margin: 5px 0;
+}
+
+/* Category-specific colors */
+.workorders-taskCategory.Logo-Design {
+  background-color: #f0e6ff;
+  color: #9b59b6;
+}
+
+.workorders-taskCategory.Website-Development {
+  background-color: #e0f7fa;
+  color: #00acc1;
+}
+
+.workorders-taskCategory.Poster-Design {
+  background-color: #fff3e0;
+  color: #ffa000;
+}
+
+.workorders-taskCategory.Video-Production {
+  background-color: #fce4ec;
+  color: #e91e63;
+}
+
+.workorders-taskCategory.Social-Media {
+  background-color: #e8f5e9;
+  color: #43a047;
+}
+
+.workorders-taskCategory.Branding {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}

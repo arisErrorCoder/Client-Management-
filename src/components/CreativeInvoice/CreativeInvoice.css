@@ -1,0 +1,117 @@
+/* CreativeInvoice.css */
+
+.creative-invoice-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.invoice-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.invoice-controls select,
+.invoice-controls button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.invoice-body {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.invoice-logo {
+  height: 60px;
+}
+
+.invoice-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.invoice-info h3 {
+  margin-bottom: 0.3rem;
+  color: #007bff;
+}
+
+.invoice-info p {
+  margin: 2px 0;
+  font-size: 0.95rem;
+}
+
+.invoice-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.invoice-items th,
+.invoice-items td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.invoice-items th {
+  background-color: #007bff;
+  color: white;
+}
+
+.invoice-items input {
+  width: 100%;
+  padding: 0.25rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.invoice-items button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.invoice-items button:hover {
+  background: #c82333;
+}
+
+.invoice-totals {
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.invoice-notes {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #555;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+}
